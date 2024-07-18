@@ -8,7 +8,15 @@ public class App {
         return "Hello World!";
     }
 
+    public boolean prueba(){
+        if(Math.random()*10 <= 5 ) 
+            return true;
+        else 
+            return false;
+    }
+
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        //System.out.println(new App().getGreeting());
+        System.out.println(new App().prueba());
     }
 }
