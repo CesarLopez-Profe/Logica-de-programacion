@@ -28,3 +28,16 @@ Cabe aclarar que esta tabla resume brevemente el contenido de cada documento, pa
   • [Tipo String](Slides/8_Tipo_Dato_String.pptx)
 
 
+## Sitios web recomendados para la materia
+
+  • [W3school - Turorial de Java y otros lenguajes](https://www.w3schools.com/java/default.asp)
+
+  • [GeeksforGeeks - Turorial de Java](https://www.geeksforgeeks.org/java/?ref=outind)
+
+  • [Edabits - Turorial y retos en Java y otros lenguajes](https://edabit.com/challenges/java)
+
+  • [CodingBat - Retos en Java y Python](https://codingbat.com/java)
+
+  • [Kattis - Enunciados de retos para programación](https://open.kattis.com/problems)
+
+

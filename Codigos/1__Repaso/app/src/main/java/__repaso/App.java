@@ -4,11 +4,51 @@
 package __repaso;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        
+        //Declaración de variables
+        char caracter = 'a';
+        long cant_dinero = 98987977999L; //Se debe poner la L a partir del caracter 10 para que el long sea aceptado
+
+        
+        //Cast float, especial: Se usa cuando se declara un float con el punto decimal debido a que todos los valores numéricos con  
+        //. decimal, son por defecto interpretados por java como doubles
+        float altura = (float)1.70; 
+        float peso = 82.1f;
+        float masa = 34; //en este caso no va cast porque no tiene . decimal
+
+        //Cast caracteres para sacar su número ascii
+        byte cod_ascii = (byte)caracter;
+        //System.out.println(cod_ascii);
+        
+        //Calcular un aleatorio, usando la clase Math, siempre devuelve un double > 0 y <=1
+        Math.random();
+
+        //si se quiere un aleatorio con dos enteros
+        System.out.println(Math.random()*100); //Sigue devolviendo un double, pero con dos enteros
+
+        //si se quiere un aleatorio que devuelva solo dos enteros
+        System.out.println((byte)(Math.random()*100)); //al castear TODA la fórmula(se debe poner entre parentesis), devuelve el byte
+
+        //Al múltiplicar por 1000 habrán aleatorios que funcionan bien y otros mal porque no caben en el byte. Cuando no caben en el byte
+        //Devolverán -1. Recordar que enel byte solo caben hasta 127 positivos.
+        System.out.println((byte)(Math.random()*1000)); 
+
+        //Operadores Unarios: ++, --, +=, -=, *=, /=
+        byte nro_estudiantes = 50;
+        System.out.println("nro de estudiantes COMIENZA en: " + nro_estudiantes);
+        nro_estudiantes++;
+        System.out.println("nro de estudiantes va en: " + nro_estudiantes);
+        nro_estudiantes--;
+        System.out.println("nro de estudiantes va en: " + nro_estudiantes);
+        nro_estudiantes+=30;
+        System.out.println("nro de estudiantes va en: " + nro_estudiantes);
+        nro_estudiantes*=2;
+        System.out.println("nro de estudiantes va en: " + nro_estudiantes);
+        nro_estudiantes/=5;
+        System.out.println("nro de estudiantes va en: " + nro_estudiantes);
+
+
     }
 }
