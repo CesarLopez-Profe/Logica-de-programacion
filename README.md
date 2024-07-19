@@ -12,6 +12,8 @@ Cabe aclarar que esta tabla resume brevemente el contenido de cada documento, pa
 
   • [Los Mandamientos del programador](https://www.canva.com/design/DAGLDNHOZ0A/tjMNPkM1jW5kIDijSATwRA/edit?utm_content=DAGLDNHOZ0A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
+  • [Manual para instalar, configurar proyecto Gradle-Kotlin y ejecutar programa en VScode](https://www.canva.com/design/DAGLRkh7UBg/K9DV7EwHSw4YjkZJOTI7FA/edit?utm_content=DAGLRkh7UBg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 
 ## Temario
   
