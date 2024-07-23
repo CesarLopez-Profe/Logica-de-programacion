@@ -44,6 +44,8 @@ public class App {
         System.out.println("nro de estudiantes va en: " + nro_estudiantes);
         nro_estudiantes+=30;
         System.out.println("nro de estudiantes va en: " + nro_estudiantes);
+        nro_estudiantes-=20;
+        System.out.println("nro de estudiantes va en: " + nro_estudiantes);
         nro_estudiantes*=2;
         System.out.println("nro de estudiantes va en: " + nro_estudiantes);
         nro_estudiantes/=5;
