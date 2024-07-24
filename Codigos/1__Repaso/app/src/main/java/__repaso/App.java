@@ -7,6 +7,7 @@ public class App {
 
     public static void main(String[] args) {
         
+         
         //Declaración de variables
         char caracter = 'a';
         long cant_dinero = 98987977999L; //Se debe poner la L a partir del caracter 10 para que el long sea aceptado
@@ -50,7 +51,7 @@ public class App {
         System.out.println("nro de estudiantes va en: " + nro_estudiantes);
         nro_estudiantes/=5;
         System.out.println("nro de estudiantes va en: " + nro_estudiantes);
-
+        
 
     }
 }
