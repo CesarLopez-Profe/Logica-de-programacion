@@ -7,7 +7,65 @@ public class App {
 
     public static void main(String[] args) {
         
-         
+        System.out.println(Sumar(109,56));
+        System.out.println(Dividir(987, 0));
+    }
+    
+    public static int Sumar(int a, int b){
+        try {
+            int resultado = a + b;
+            return resultado;
+        } catch (Exception e) {
+            System.out.println("Ocurrió un error en la resta" + e);
+            return 0;
+        }
+    }
+
+    public static int Restar(int a, int b){
+        
+        try {
+            int resultado = a-b;
+            return resultado;   
+        } 
+        
+        catch (Exception e) {
+            System.out.println("Ocurrió un error en la resta" + e);
+            return 0;
+        }
+    }
+
+    public static int Multiplicar(int a, int b){
+        try {
+            int resultado = a*b;
+            return resultado;
+        } 
+        
+        catch (Exception e) {
+            System.out.println("Ocurrió un error en el producto" + e);
+            return 0;
+        }
+        
+    }
+
+    public static double Dividir(int a, int b){
+        
+        try {
+            double resultado = 0;
+            if (b!=0){
+                resultado = a/b;
+            } 
+                
+            return resultado;
+        } 
+        catch (Exception e) {
+            System.out.println("Ocurrió un error en la división" + e);
+            return 0;
+        }
+
+
+    }
+
+             /* 
         //Declaración de variables
         char caracter = 'a';
         long cant_dinero = 98987977999L; //Se debe poner la L a partir del caracter 10 para que el long sea aceptado
@@ -51,7 +109,44 @@ public class App {
         System.out.println("nro de estudiantes va en: " + nro_estudiantes);
         nro_estudiantes/=5;
         System.out.println("nro de estudiantes va en: " + nro_estudiantes);
-        
+        */
 
-    }
+    
+    
+    //ZONA DE FUNCIONES
+    /*
+            Cómo escribir una función que NO retorna, función void:
+
+            public static void <Nombre en verbo infinitivo> (tipo nombre, tipo nombre,...){
+    *          
+    *                 try{
+    *                       Instrucciones del programa 
+    *                       
+    *                 }
+    * 
+    *                 catch(Exception error){
+    *                      System.out.println("mensaje de error")
+    *                        
+    *                 }
+    *              
+    *          }
+
+    *           Cómo escribir una función que retorna algo:
+    *  
+    *          public static <tipo de dato que retorna> <Nombre en verbo infinitivo> (tipo nombre, tipo nombre,...){
+    *          
+    *                 try{
+    *                       Instrucciones del programa 
+    *                       return
+    *                 }
+    * 
+    *                 catch(Exception error){
+    *                      System.out.println("mensaje de error")
+    *                      return  
+    *                 }
+    *              
+    *          }
+    * 
+    * 
+    */
 }
