@@ -88,3 +88,92 @@ Ejercicio cara dado switch
             System.out.println("Ocurrió un error \n" + e);
         }
 
+Ejercicio menu restaurante
+
+
+//zona de imports
+import java.util.Scanner; //libreria para capturar datos desde la consola
+
+public class App {
+      
+
+    public static void main(String[] args){
+
+        try {
+            Scanner teclado = new Scanner(System.in);
+            byte op_e = 0,op_f = 0, op_b = 0;
+
+            System.out.println("Ingrese la entrada: 1. Ceviche, 2. Crema, 3. Patacones");
+            op_e = teclado.nextByte();
+
+            System.out.println("Ingrese el plato fuerte: 1. Pollo, 2. Carne, 3. Pescado");
+            op_f = teclado.nextByte();
+
+            System.out.println("Ingrese la bebida: 1. Cerveza, 2. Jugo, 3. Gaseosa");
+            op_b = teclado.nextByte();
+
+            System.out.println(Elegir_menu(op_e, op_f, op_b));
+            
+        } 
+        
+        catch (Exception e) {
+            System.out.println("Ocurrió un error \n" + e);
+        }
+
+    }
+    
+
+    public static String Elegir_menu(byte op_ent, byte op_fu, byte op_beb){
+
+        try {
+            String ent_eleg = "", fu_eleg="",beb_eleg ="";
+            
+            if(op_ent >=1 && op_ent <=3 && op_fu >=1 && op_fu <=3
+            && op_beb >=1 && op_beb<=3 ){
+
+                switch (op_ent) {
+                    case 1: ent_eleg = "Ceviche";
+                        break;
+                    case 2: ent_eleg = "Crema";
+                        break;
+                    case 3: ent_eleg = "Patacones";
+                        break;
+                    default: ent_eleg = "Entrada no válida";
+                }
+
+                switch (op_fu) {
+                    case 1: fu_eleg = "Pollo";
+                        break;
+                    case 2: fu_eleg = "Carne";
+                        break;
+                    case 3: fu_eleg = "Pescado";
+                        break;
+                    default: fu_eleg = "Fuerte no válido";
+                }
+
+                switch (op_beb) {
+                    case 1: beb_eleg = "Cerveza";
+                        break;
+                    case 2: beb_eleg = "Jugo";
+                        break;
+                    case 3: beb_eleg = "Gaseosa";
+                        break;
+                    default: beb_eleg = "Bebida no válida";
+                }
+
+                return "Entrada: " + ent_eleg + " Fuerte: " + fu_eleg + " Bebida: " + beb_eleg;
+
+            }
+            else
+                return "Opción no válida";
+
+        } 
+        
+        catch (Exception e) {
+            return ("Ocurrió un error \n" + e);
+        }
+
+    }
+
+
+}
