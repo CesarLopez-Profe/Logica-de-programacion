@@ -1,0 +1,115 @@
+REDONDEO***
+            //redondeo
+            double nro_real = 78.3432;
+
+            System.out.println(Math.floor(nro_real));
+            System.out.println(Math.ceil(nro_real));
+            System.out.println(Math.round(nro_real));    
+
+            //Redondeo usando BigDecimal
+            //1. convertimos el real a BigDecimal
+            BigDecimal valor_BD = new BigDecimal(nro_real);
+            //2. le aplicamos el redondeo con setScale, pero sigue siendo BigDecimal
+            System.out.println(valor_BD.setScale(2,RoundingMode.HALF_UP));
+            //3. Si lo queremos operar como double o float hay que convertirlo colocando
+            //punto(.) al final y se selecciona el tipo de dato
+            double nuevo_real = valor_BD.setScale(2,RoundingMode.HALF_UP).doubleValue();
+            System.out.println(nuevo_real);
+
+            //otro ejemplo
+            
+            double nro_real = 74.595567, nro_real_rounded;
+
+            System.out.println(Math.floor(nro_real));
+            System.out.println(Math.ceil(nro_real));
+            System.out.println(Math.round(nro_real));
+
+            BigDecimal nro_bd = new BigDecimal(nro_real);
+            System.out.println(nro_bd.setScale(2,RoundingMode.HALF_UP)); //Para todos los cursos
+            nro_real_rounded = nro_bd.setScale(2,RoundingMode.HALF_UP).doubleValue(); //Casteo de un bigdecimal
+            System.out.println(nro_real_rounded);
+
+
+RANDOM ENTRE NÚMEROS
+
+            System.out.println(Math.random());
+            System.out.println((byte)(Math.random()*10)); //rango de nros entre 0 y 9
+            System.out.println((short)(Math.random()*1000)); //rango de nros entre 0 y 999
+
+            //rango entre un limite inferior =10 y un limite superior =20
+            //formula: (Mayor-Menor)+menor+1
+            System.out.println((byte)(Math.random()*(20-10)+11));
+            
+            System.out.println((int)(Math.random()*(999999-100000)+100001));
+
+
+                    System.out.println((byte)(Math.random()*10)); //genera aleatorios entre 0 y 9
+            System.out.println((byte)(Math.random()*100)); //genera aleatorios entre 0 y 99
+            System.out.println((short)(Math.random()*1000)); //genera aleatorios entre 0 y 999
+
+            //Math.random()*(Lsup - Linf) + Linf +1
+            //queremos sacar un random entre 100000 y 999999
+            System.out.println((int) (Math.random()* (999999-100000)+100001 ));
+
+
+CICLO FOR
+
+            for (byte var = 0; var <=99; var++){
+                System.out.println((byte)(Math.random()*(20-9)+10));
+            }
+
+            //Generar 100 aleatorios entre 1 y 50
+            // y al final se quiere conocer cuántos son pares
+            //y cuántos son impares
+            final byte cant_alea = 100, linf=1, lsup=50;
+            byte cant_pares = 0, cant_impares = 0, alea=0;
+
+            //Cómo sé si un nro es par o no, usamos mod %2 =0
+            //conocemos cuando comienza y cuando termina? SI
+            //Usamos un for
+
+            for(byte var=1; var<=cant_alea;var++){
+                //Son las instrucciones que se repiten en cada iteración
+                //del ciclo
+                alea = (byte)(Math.random()*(lsup-linf)+linf+1);
+                System.out.println(alea);
+                if(alea%2==0)
+                    cant_pares++;
+                else
+                    cant_impares++;
+            }
+
+            //se imprimen los resultados después de que el ciclo termina
+            System.out.println("Cantidad de números pares \t" + cant_pares);
+            System.out.println("Cantidad de números impares \t" + cant_impares);
+
+            //Realizar un algoritmo para imprimir los primeros 100 
+            //números, separarlos por “ - ”, 
+            //por ejemplo: 1 – 2 – 3 ………… - 100.
+            final byte cant_nros = 100;
+
+            for(byte var = 1; var <=cant_nros; var ++ ){
+                System.out.print(var + " - ");
+            }
+            
+
+            //Realizar un algoritmo para imprimir los primeros 100 
+            //números(#-#) en lotes de 5 números. Es decir, cada 5 números
+            //debe saltar la línea 
+            //ejem: 
+            //1-2-3-4-5
+            //6-7-8-9-10
+            //11-12-13-14-15
+
+            final byte cant_nros = 100;
+
+            //IMprimir 150 nros en bloques de 5
+            for(short nro=1; nro<=150; nro++){
+                
+                if(nro%5==0)
+                    System.out.println(nro);
+                else
+                    System.out.print(nro + " - ");
+            }
+
+
