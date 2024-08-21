@@ -5,36 +5,23 @@ package ciclos;
 
 
 public class App {
+    
+    public static String Verde = "\u001B[32m",
+        Rojo = "\u001B[31m",
+        Negro = "\u001B[30m",
+        Amarillo = "\u001B[33m",
+        Azul = "\u001B[34m",
+        Purpura = "\u001B[35m",
+        CYAN = "\u001B[36m",
+        Blanco = "\u001B[37m",
+        RESET = "\u001B[0m";
+    
     public String getGreeting() {
         return "Hello World!";
     }
     public static void main(String[] args) {
 
         try {
-            //calcule 100 nros aleatorios entre 1 y 50
-            //Al final diga cuántos de estos nros fueron pares
-            //y Cuántos impares
-
-            //1. declarar variables y constantes
-            final byte cant_alea=100, lim_inf=1, lim_sup=50;
-            byte cant_pares=0, cant_impar=0, alea=0;
-
-            //2. Definimos un ciclo para calcular los aleatorios
-            for(byte var = 1; var <=cant_alea; var++ ){
-                //3. Dentro del ciclo:
-                    //4.    Calcular el aleatorio
-                    alea = (byte)(Math.random()*(lim_sup-lim_inf)+lim_inf+1);
-                    //5.    ? si el aleatorio es par = sumo 1 al total de pares
-                    //6.    sino, sumo 1 al total de impares
-                    if(alea%2==0)
-                        cant_pares++;
-                    else 
-                        cant_impar++;
-            }
-            //7. Imprimir los resultados calculados en el ciclo
-            System.out.println("La cantidad de núemros pares fueron \t" + cant_pares);
-            System.out.println("La cantidad de núemros impares fueron \t" + cant_impar);
-            
             
         } 
         

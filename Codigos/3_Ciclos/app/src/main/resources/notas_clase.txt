@@ -112,4 +112,154 @@ CICLO FOR
                     System.out.print(nro + " - ");
             }
 
+                        //calcule 100 nros aleatorios entre 1 y 50
+            //Al final diga cuántos de estos nros fueron pares
+            //y Cuántos impares
 
+            //1. declarar variables y constantes
+            final byte cant_alea=100, lim_inf=1, lim_sup=50;
+            byte cant_pares=0, cant_impar=0, alea=0;
+
+            //2. Definimos un ciclo para calcular los aleatorios
+            for(byte var = 1; var <=cant_alea; var++ ){
+                //3. Dentro del ciclo:
+                    //4.    Calcular el aleatorio
+                    alea = (byte)(Math.random()*(lim_sup-lim_inf)+lim_inf+1);
+                    //5.    ? si el aleatorio es par = sumo 1 al total de pares
+                    //6.    sino, sumo 1 al total de impares
+                    if(alea%2==0)
+                        cant_pares++;
+                    else 
+                        cant_impar++;
+            }
+            //7. Imprimir los resultados calculados en el ciclo
+            System.out.println("La cantidad de núemros pares fueron \t" + cant_pares);
+            System.out.println("La cantidad de núemros impares fueron \t" + cant_impar);
+
+    COnversión string a nro con pares
+            
+            String texto1 = "89986";
+                int nro_conv = Integer.parseInt(texto1);
+                long long_conv = Long.parseLong(texto1);
+                float flo_conv = Float.parseFloat(texto1); 
+
+    Conversion nro a string
+
+                String txt_nro= String.valueOf(Math.random()*100); 
+                boolean var = true;
+                System.out.println(txt_nro);
+                System.out.println(String.valueOf(var));
+
+Código del reloj con for anidados
+    byte cant_hh=24, cant_min_seg = 60;
+                short mil_seg= 100;
+
+                for(byte hh = 0; hh<cant_hh;hh++){
+                    for (byte mm = 0; mm<cant_min_seg; mm++){
+                        for(byte ss=0; ss < cant_min_seg; ss++){
+                            System.out.println(Rojo+hh+":"+Azul+mm+":"+Verde+ss);
+                            Thread.sleep(mil_seg);
+                        }
+                    }
+                }
+CICLOS ANIDADOS PARA PINTAR LA BANDERA DE COLOMBIA
+
+final byte cant_ast = 20, 
+                cant_lin=20,
+                limite_amarilo = 10,
+                limite_azul = 15,
+                limite_rojo = 20;
+
+            
+            System.out.print(RESET);
+            for(byte lin=1; lin<=cant_lin; lin++){
+                    if(lin <=limite_amarilo)
+                        System.out.print(Amarillo);
+                    else if(lin > limite_amarilo && lin <= limite_azul)
+                        System.out.print(Azul);
+                    else 
+                        System.out.print(Rojo);
+
+                for (byte ast=1; ast<=cant_ast;ast++){
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            
+            System.out.print(RESET);
+
+Bandera en cruz ciclos anidados
+ final byte cant_ast = 20, 
+                cant_lin=20,
+                linea_roja = 10,
+                ast_rojo = 10;
+
+            
+            System.out.print(RESET);
+            for(byte lin=1; lin<=cant_lin; lin++){
+                for (byte ast=1; ast<=cant_ast;ast++){
+                    
+                    if (lin == linea_roja)
+                        System.out.print(Rojo + "*");
+                    else if (ast == ast_rojo)
+                        System.out.print(Rojo + "*");
+                    else 
+                        System.out.print(Blanco + "*");
+                
+                }
+                System.out.println();
+            }
+            
+            System.out.print(RESET);
+
+Bandera diagonales
+
+final byte cant_ast = 20, 
+                cant_lin=20;
+            
+            byte pos_ast_rojo = 20; //para pintar la diagonal de der a izq
+
+            
+            System.out.print(RESET);
+            for(byte lin=1; lin<=cant_lin; lin++){
+                for (byte ast=1; ast<=cant_ast;ast++){
+                    
+                    if (lin == ast) //pinto la diagonal de izq a der
+                        System.out.print(Rojo + "*");
+                    else if (ast == pos_ast_rojo)
+                        System.out.print(Rojo + "*");
+                    else 
+                        System.out.print(Blanco + "*");
+                
+                }
+                System.out.println();
+                pos_ast_rojo--;
+            }
+            
+            System.out.print(RESET);
+
+Bandera Diagonales + cruz
+
+            final byte nro_lin = 20, nro_as = 20, as_lin_roj = 10;
+            
+            System.out.println(RESET);
+            
+            for(byte lin=1; lin <= nro_lin; lin++){
+
+                for(byte as=1; as<=nro_as; as++){
+                    
+                    if(as == as_lin_roj || lin==as_lin_roj || lin == as || lin+as == nro_lin+1)
+                        System.out.print(Rojo + "*");
+                    
+                    else
+                        System.out.print(Azul + "*");
+                }
+                System.out.println();
+            }
+            System.out.println(RESET);
+        } 
+        
+        catch (Exception e) {
+            System.out.println("Ocurrió un error \n" + e);
+            
+        }
