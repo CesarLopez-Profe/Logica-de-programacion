@@ -1,0 +1,32 @@
+Primer programa archivos
+            //1. ubicar el archivo
+            File arc_nros = new File("Codigos\\4_Archivos\\app\\src\\main\\resources\\numeros.txt");
+            //2. abrir el archivo
+            FileReader fr_nros = new FileReader(arc_nros);
+            //3. cargamos el archivo en el buffer
+            BufferedReader br_nros = new BufferedReader(fr_nros);
+
+            //4. leer la primera linea
+            String linea = br_nros.readLine();
+            long resultado_suma = 0;
+
+            //5. Preguntar si el archivo está vacío
+            if(linea == null) //--> archivo vacío
+                System.out.println("El archivo está vacío");
+            else{ //--> El archivo tiene datos
+                //6. Se opera el archivo
+                while (linea !=null ) { 
+                    
+                    resultado_suma+=Long.parseLong(linea); // equivale a resultado_suma = resultado_suma + Long.parseLong(linea)
+
+                    linea = br_nros.readLine();
+                }
+            } 
+
+            //7. cuando se termina el if, se cierra el buffer del archivo
+            br_nros.close();
+            
+            //8.Se presentan los resultados
+            System.out.println("La suma de los números del archivo fue: \n"
+                        + resultado_suma );
+

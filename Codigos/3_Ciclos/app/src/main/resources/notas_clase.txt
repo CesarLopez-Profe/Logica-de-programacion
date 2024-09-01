@@ -263,3 +263,232 @@ Bandera Diagonales + cruz
             System.out.println("Ocurrió un error \n" + e);
             
         }
+    //bandera diagonal
+    byte termina_amarillo = 20;
+        
+        for(byte i=1; i<=20; i++){
+            
+            for (byte j= 1; j <= 20; j++){
+                
+                if (j<=termina_amarillo)
+                    bandera_retornar+=Verde+"*"+RESET;
+                else
+                    bandera_retornar += Amarillo+"*"+RESET;
+                    
+            }
+
+4 FOR ANIDADOS, FABRICA DE GALLETAS
+
+    try {
+            final short cant_gallxemp = 60,
+                cant_emp_caja = 30, cant_cajaxlote=20, cant_lotes=10; 
+            
+            for(short lote=1; lote <= cant_lotes; lote ++){
+                System.out.println("Lote " + lote);
+
+                for(short caja=1; caja<=cant_cajaxlote; caja++){
+                    System.out.println("\tCaja " + caja);
+                    
+                    for(short empaque = 1; empaque <= cant_emp_caja; empaque++){
+
+                        System.out.println("\t\t Empaque " +  empaque);
+
+                        for(short galletas=1; galletas<=cant_gallxemp;galletas++ ){
+                            if (galletas ==1 )
+                                System.out.print("\t\t\t#");
+                            else
+                                System.out.print("#");
+                            
+                            Thread.sleep(5);
+                        }
+                        System.out.println();
+                    }
+
+                }
+
+            }
+
+           
+        } 
+        
+        catch (Exception e) {
+            System.out.println("Ocurrió un error \n" + e);
+            
+        }
+
+OTRA SOLUCION GALLETAS
+            final short cant_gallxemp=80, cant_empxcaj=30, cant_cajxlote=20, cant_lot_empacar=50;
+
+            for(short lote=1; lote <=cant_lot_empacar; lote++){
+
+                
+
+                for(short caja = 1; caja <= cant_cajxlote; caja++){
+
+                    
+
+                    for(short empaque = 1; empaque <= cant_empxcaj; empaque++){
+
+                        System.out.print("Lote: " + lote + " Caja: " + caja + " Empaque: " + empaque);
+
+                        for(short galleta = 1; galleta <= cant_gallxemp; galleta++){
+
+                            System.out.print("#");
+                            Thread.sleep(5);
+
+                        }
+                        System.out.println();
+
+                    }
+
+
+                }
+
+
+            }
+
+
+           
+        } 
+
+Ejercicio ciclo do while, primer menu citas médicas
+public static void main(String[] args) {
+
+        try {
+            Scanner teclado = new Scanner(System.in);
+
+            String opcion="";
+
+            do { 
+                
+                System.out.println("1. Pedir nueva cita\n"
+                                   + "2. Consultar horario\n"
+                                   + "3. Cancelar cita\n" 
+                                   + "Digite una opcion:" 
+                                );
+                
+                opcion = teclado.next();
+
+                switch(opcion.charAt(0)){
+                    case '1': System.out.println(Verde + Asignar_nueva_cita() + RESET);
+                        break;
+                    case '2': System.out.println(Verde+ Devolver_horario() +RESET);
+                        break;
+                    case '3': System.out.println(Verde + Aprobar_cancelacion_cita() + RESET);
+                        break;
+                    case '0': System.out.println(Verde + "Fin ejecución" + RESET);
+                        break;
+                    default: System.out.println(Rojo + "Opción no válida" + RESET);
+                }
+
+            } while (opcion.charAt(0)!='0');
+
+        }
+        catch (Exception e) {
+            System.out.println("Ocurrió un error \n" + e);
+            
+        }
+
+
+    }
+
+    public static String Aprobar_cancelacion_cita(){
+
+        try {
+            return "Cita cancelada";
+        } catch (Exception e) {
+            return e.toString();
+        }
+
+    }
+
+    public static String Asignar_nueva_cita(){
+        try {
+            final byte sedes = 10, dia_max = 28, dia_min = 1, mes_min=1, mes_may=12, min_min=0, min_max=30,
+                hora_min=6, hora_max=18; 
+
+            String min_random="";
+
+            if((byte)(Math.random()*10) > 5)
+                min_random=String.valueOf(min_max);
+            else    
+                min_random=String.valueOf(min_min)+min_min;
+
+            return "Se asigna cita en la sede " + (byte)(Math.random()*(sedes)+1)  +
+                    ", " +  (byte)(Math.random()*(dia_max-dia_min)+dia_min) + 
+                    "/" + (byte)(Math.random()*(mes_may-mes_min)+mes_min) + "/2024, " + 
+                    (byte)(Math.random()*(hora_max-hora_min)+hora_min) + ":" + min_random;
+
+
+        } catch (Exception e) {
+            return e.toString();
+        }
+    }
+
+    public static String Devolver_horario(){
+        try {
+            final byte sedes = 10, dia_max = 28, dia_min = 1, mes_min=1, mes_may=12, min_min=0, min_max=30,
+                hora_min=6, hora_max=18; 
+
+            String min_random="";
+
+            if((byte)(Math.random()*10) > 5)
+                min_random=String.valueOf(min_max);
+            else    
+                min_random=String.valueOf(min_min)+min_min;
+
+            return "La próxima cita está disponible en la fecha " +
+                    (byte)(Math.random()*(dia_max-dia_min)+dia_min) + 
+                    "/" + (byte)(Math.random()*(mes_may-mes_min)+mes_min) + "/2024, " + 
+                    (byte)(Math.random()*(hora_max-hora_min)+hora_min) + ":" + min_random;
+
+
+        } catch (Exception e) {
+            return e.toString();
+        }
+    }
+
+        try {
+            Scanner teclado = new Scanner(System.in);
+
+            String opcion_1er="", opcion_2do="";
+
+            do { 
+                
+                System.out.println("1. Comprar Tiquete Aereo\n"
+                                   + "2. Comprar Tiquete Terrestre\n"
+                                   + "3. Comprar Tiquete Tren\n"
+                                   + "0. Finalizar\n" 
+                                   + "Digite una opcion:" 
+                                );
+                
+                opcion_1er = teclado.next();
+
+                switch(opcion_1er.charAt(0)){
+                    case '1': do { 
+                            System.out.println("1. Tiquete Nacional\n"
+                            + "2. Tiquete Internacional\n"
+                            + "3. Reembolso\n"
+                            + "4. Volver al menú anterior\n" 
+                            + "Digite una opcion:" 
+                            ); 
+                            opcion_2do = teclado.next();
+
+                            } while (opcion_2do.charAt(0)!=4);
+                        break;
+                    case '2': System.out.println(Verde+ "" +RESET);
+                        break;
+                    case '3': System.out.println(Verde + "" + RESET);
+                        break;
+                    case '0': System.out.println(Verde + "Fin ejecución" + RESET);
+                        break;
+                    default: System.out.println(Rojo + "Opción no válida" + RESET);
+                }
+
+            } while (opcion_1er.charAt(0)!='0');
+
+        }
+        catch (Exception e) {
+            System.out.println("Ocurrió un error \n" + e);
+            
+        }
