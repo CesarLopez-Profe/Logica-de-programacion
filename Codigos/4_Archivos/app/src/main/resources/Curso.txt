@@ -1,0 +1,12 @@
+Algebra
+20
+10
+Redes
+20
+5
+Logica
+10
+0
+Calculo
+30
+12

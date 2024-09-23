@@ -1,0 +1,4 @@
+El curso Algebra lo aprobaron 10 lo reprobaron 10 , total estudiantes 20
+El curso Redes lo aprobaron 15 lo reprobaron 5 , total estudiantes 20
+El curso Logica lo aprobaron 10 lo reprobaron 0 , total estudiantes 10
+El curso Calculo lo aprobaron 18 lo reprobaron 12 , total estudiantes 30

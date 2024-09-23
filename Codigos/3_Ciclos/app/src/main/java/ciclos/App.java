@@ -60,22 +60,13 @@ public class App {
 
                         }while(opcion2.charAt(0) != '3');
                         break;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                         case '2': seleccion_nivel1 = "Tiquete Terrestre";
-                    break;
-                    case '3': seleccion_nivel1 = "Tiquete Tren";
-                    break;                        
-                    case '0': System.out.println(Verde + "Finalizó" + RESET);
-                    break;
-                    default: System.out.println(Rojo + "Opción no válida" + RESET);
+                        break;
+                        case '3': seleccion_nivel1 = "Tiquete Tren";
+                        break;                        
+                        case '0': System.out.println(Verde + "Finalizó" + RESET);
+                        break;
+                        default: System.out.println(Rojo + "Opción no válida" + RESET);
                 }
 
 

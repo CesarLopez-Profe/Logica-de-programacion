@@ -30,3 +30,285 @@ Primer programa archivos
             System.out.println("La suma de los números del archivo fue: \n"
                         + resultado_suma );
 
+//Otro ejemplo
+
+    public static void main(String[] args) {
+        
+        try {
+            
+            //1. Ubicar el archivo con la ruta relativa del archivo
+            File arc_nros = new File("Codigos\\4_Archivos\\app\\src\\main\\resources\\numeros.txt");
+
+            //2. Abrir el archivo, en este caso de lectura
+            FileReader abr_nros = new FileReader(arc_nros);
+
+            //3. Ponemos el archivo en buffer correspondiente
+            BufferedReader buf_nros = new BufferedReader(abr_nros);
+
+            //4. leer la primera linea
+            String linea = buf_nros.readLine();
+            long total_suma = 0;
+
+            //5. Preguntar si está vacío el archivo
+            if(linea == null)
+                System.out.println("Archivo está vacío");
+            else{
+                //Ciclo para operar el archivo
+                while(linea != null){
+                    total_suma+= Long.parseLong(linea);
+                    linea = buf_nros.readLine(); //la instruccion que lee la siguiente linea, da continuidad al ciclo
+                }
+
+            }
+            //6. Cerrar el archivo
+            buf_nros.close();
+            //7. Presentar los resultados
+            System.out.println("La suma total fue de: " + total_suma);
+
+        } 
+        
+        catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+    }
+
+    //escritura archivos ejemplo 1
+    }public static void main(String[] args) {
+        //System.out.println(new App().getGreeting());
+        try {
+            
+            FileWriter arc_aleatorios = new FileWriter("Codigos\\4_Archivos\\app\\src\\main\\resources\\aleatorios.txt", true);
+            BufferedWriter bu_aleatorios = new BufferedWriter(arc_aleatorios);
+
+            PrintWriter linea_impr = new PrintWriter(bu_aleatorios);
+
+            for(byte nro = 1; nro<=100; nro++){
+                linea_impr.println((short)(Math.random()*1000));
+            }
+
+            bu_aleatorios.close();
+        } 
+        
+        catch (Exception e) {
+            System.out.println("ocurrió un error \n" + e.toString());
+        }
+
+//ejercicio archivo de lectura y archivo de escritura
+
+public static void main(String[] args) {
+        //System.out.println(new App().getGreeting());
+        try {
+
+            //Lectura
+            FileReader ub_cur = new FileReader("Codigos\\4_Archivos\\app\\src\\main\\resources\\Curso.txt");
+            BufferedReader bu_cur = new BufferedReader(ub_cur);
+
+            //Escritura
+            BufferedWriter bu_res = new BufferedWriter(new FileWriter("Codigos\\4_Archivos\\app\\src\\main\\resources\\resultados.txt"));
+
+            //variables
+            String linea = bu_cur.readLine(), nom_curso ="";
+            PrintWriter linea_impr = new PrintWriter(bu_res);
+            short cant_estud = 0, cant_aprob=0;
+
+            //verificamos que el archivo no está vacío
+            if(linea == null)
+                System.out.println("El archivo de cursos está vacío");
+            else{
+                //el archivo tiene datos
+                while(linea !=null){
+
+                    nom_curso = linea;
+                    linea = bu_cur.readLine();
+                    cant_estud = Short.parseShort(linea);
+                    linea = bu_cur.readLine();
+                    cant_aprob = Short.parseShort(linea);
+
+                    //escribir en el archivo
+                    linea_impr.println("Curso " + nom_curso
+                        + " ganan " + cant_aprob
+                        + " pierden " + (cant_estud - cant_aprob)
+                        + " total estudiantes " + cant_estud
+                        );
+
+                    linea = bu_cur.readLine();
+                }
+            }
+            bu_cur.close();
+            bu_res.close();
+            
+
+        } 
+        
+        catch (Exception e) {
+            System.out.println("ocurrió un error \n" + e.toString());
+        }
+
+
+    }
+
+                //Ejemplo: archivo nuevo con 100 nros aleatorios
+            //Ubicación del archivo, 
+            FileWriter arc_aleatorios = new FileWriter("Codigos\\4_Archivos\\app\\src\\main\\resources\\aleatorios.txt",true);
+            //Crear el buffer de escritura
+            BufferedWriter bu_aleatorios = new BufferedWriter(arc_aleatorios);
+            //Crear el apuntador de escritura
+            PrintWriter escribir = new PrintWriter(bu_aleatorios);
+
+            //Operar
+            for(byte alea = 1; alea<=100; alea++){
+
+                escribir.println((short)(Math.random()*1000));
+
+            }
+
+            //Cerrar el archivo para que quede en el disco
+            bu_aleatorios.close();
+
+
+            try {
+
+            FileWriter ar_res = new FileWriter("Codigos\\4_Archivos\\app\\src\\main\\resources\\resumen.txt");
+            BufferedWriter bu_res = new BufferedWriter(ar_res);
+            PrintWriter escribir = new PrintWriter(bu_res);
+
+            FileReader ar_cursos = new FileReader("Codigos\\4_Archivos\\app\\src\\main\\resources\\Curso.txt");
+            BufferedReader bu_cursos = new BufferedReader(ar_cursos);
+
+            //BufferedReader bu_cursos = new BufferedReader(new FileReader("Codigos\\4_Archivos\\app\\src\\main\\resources\\Curso.txt"));
+
+            String curso = "", linea = bu_cursos.readLine();
+            int cant_estud=0, cant_repro=0;
+
+            if(linea == null)
+                System.out.println("EL archivo está vacío");
+            else{
+
+                while(linea !=null){
+                    curso = linea;
+                    linea = bu_cursos.readLine();
+                    cant_estud = Integer.parseInt(linea);
+                    linea = bu_cursos.readLine();
+                    cant_repro = Integer.parseInt(linea);
+
+                    //Escribir el archivo de salida
+                    escribir.println("El curso " + curso
+                        + " lo aprobaron " + (cant_estud - cant_repro) 
+                        + " lo reprobaron " + cant_repro
+                        + " , total estudiantes " + cant_estud
+                    );
+
+                    //instruccion de continuidad
+                    linea = bu_cursos.readLine();
+                }
+            }
+            bu_cursos.close();
+            bu_res.close();
+
+
+
+
+
+        } 
+        
+        catch (Exception e) {
+            System.out.println("ocurrió un error \n" + e.toString());
+        }
+
+
+//manejo de dos arc de lectura mas 1 de escritura
+
+            BufferedReader bu_emp = new BufferedReader(new FileReader("Codigos\\4_Archivos\\app\\src\\main\\resources\\Empleados.txt"));
+            BufferedReader bu_pre = null; //este buffer lo pongo en null porque se abre y cierra dentro del ciclo de empleados
+            BufferedWriter bu_res = new BufferedWriter(new FileWriter("Codigos\\4_Archivos\\app\\src\\main\\resources\\Resultados.txt"));
+            PrintWriter linea_res = new PrintWriter(bu_res);
+
+            String linea_emp = bu_emp.readLine(), linea_pre = null, premio = null;
+            byte nro_alea = 0, cont_lin_pre=1;
+            final byte cant_pre = 7;
+
+            if(linea_emp == null)
+                linea_res.println("El archivo de empleados está vacío");
+            else{
+
+                while(linea_emp!=null){
+                    bu_pre = new BufferedReader(new FileReader("Codigos\\4_Archivos\\app\\src\\main\\resources\\Premios.txt"));
+                    linea_pre = bu_pre.readLine();
+                    if(linea_pre == null){
+                        linea_res.println("El archivo de premios está vacío");
+                        bu_pre.close();
+                        linea_emp = null;
+                    }
+
+                    else {
+                        cont_lin_pre = 1;
+                        nro_alea = (byte)(Math.random()*(cant_pre-1)+1+1);
+    
+                        while(nro_alea >= cont_lin_pre || linea_pre!=null){
+                            if(nro_alea == cont_lin_pre)
+                                premio = linea_pre;
+    
+                            linea_pre = bu_pre.readLine();
+                            cont_lin_pre++;
+                        }
+    
+                        linea_res.println(linea_emp + " ganó el premio # " + nro_alea + " " + premio);
+                        bu_pre.close();
+                        linea_emp = bu_emp.readLine();
+    
+                    }
+                }
+
+                bu_emp.close();
+                bu_res.close();
+
+            }
+
+            BufferedReader b_emp = new BufferedReader(new FileReader("Codigos\\4_Archivos\\app\\src\\main\\resources\\Empleados.txt"));
+            BufferedWriter b_res = new BufferedWriter(new FileWriter("Codigos\\4_Archivos\\app\\src\\main\\resources\\Resultados.txt"));
+            BufferedReader b_pre = null;
+
+            String linea_pre="", linea_emp="";
+            PrintWriter impr_res = new PrintWriter(b_res);
+            byte prem_alea, cont_pre;
+            final byte cant_pre = 7;
+
+            linea_emp = b_emp.readLine();
+
+            if(linea_emp == null)
+                impr_res.println("El archivo de empleados está vacío");
+            else{
+
+                while (linea_emp !=null){
+
+                    prem_alea = (byte)(Math.random()*(cant_pre-1)+1);
+                    b_pre = new BufferedReader(new FileReader("Codigos\\4_Archivos\\app\\src\\main\\resources\\Premios.txt"));
+                    linea_pre = b_pre.readLine();
+
+                    if(linea_pre == null){
+                        impr_res.println("El archivo de premios está vacío");
+                        linea_emp = null;
+                    }
+                    else{
+                        cont_pre = 1;
+                        while(cont_pre<=prem_alea){
+                            if(cont_pre==prem_alea)
+                                impr_res.println(linea_emp + " ganó premio #" + cont_pre + " " + linea_pre);
+                            
+                            linea_pre = b_pre.readLine();
+                            cont_pre++;
+                        }
+                        linea_emp = b_emp.readLine();
+                    }
+                    b_pre.close();
+                }
+
+            }
+            b_emp.close();
+            b_res.close();
+
+
+    
+
+    

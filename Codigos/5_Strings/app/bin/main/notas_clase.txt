@@ -1,0 +1,41 @@
+            String texto = "Universidad";
+            String texto1 = "uNIversidaD";
+            
+            System.out.println(texto.length());
+            System.out.println(texto.charAt(texto.length()-1));
+            System.out.println(texto.indexOf('d'));
+            System.out.println(texto.indexOf("si"));
+            System.out.println(texto.indexOf("zz"));
+            System.out.println(texto.toUpperCase());
+            System.out.println(texto.toLowerCase());
+            System.out.println(texto.equals(texto1));
+            System.out.println(!texto.equals(texto1));
+            System.out.println(texto.equalsIgnoreCase(texto1));
+
+            System.out.println("**********SUBCADENAS**********");
+            System.out.println(texto.substring(5));
+            System.out.println(texto.substring(5,1));
+            System.out.println(texto.substring(5,7));
+            System.out.println(texto.substring(5,3));
+
+=================
+Splits
+            //SPLIT: 1. definir una cajita, tipo String
+            String[] cajita; 
+            String email = "cesar.lopezg@upb.edu.co";
+
+            //2. realizar el split y el resultado dejarlo en la cajita
+            cajita = email.split("@");
+
+            //3. consultar el tamaño final de la cajita 
+            System.out.println(cajita.length);
+
+            //
+            cajita = email.split("\\.");
+            System.out.println(cajita.length);
+            
+            //4. recorrer la cajita
+            for(int pos =0; pos < cajita.length; pos++){
+                System.out.println(cajita[pos]);
+            }
+
