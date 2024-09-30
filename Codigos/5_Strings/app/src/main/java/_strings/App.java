@@ -10,23 +10,26 @@ public class App {
 
     public static void main(String[] args) {
         try {
-                String email = "cesar.lopezg@upb.edu.co";
+            String jugadas = "XOXXOOXXO", j_h="", j_v="";
+            byte factor_h=0;
 
-                //1. Declarar una cajita para recibir los pedazos del string
-                String[] cajita;
-
-                //2. Partir el string y lo vamos a poner en la cajita
-                cajita = email.split("\\.");
-
-                //3. Contar las partes o el tamaño de la cajita
-                System.out.println(cajita.length);
-
-                //4. recorrer la cajita
-                for(int pos = 0; pos < cajita.length; pos++){
-                    System.out.println(cajita[pos]);
-                }
+            for(byte i = 0; i<=jugadas.length()-1;i+=3){
 
 
+                j_h = "" + jugadas.charAt(i*factor_h) + jugadas.charAt(i*factor_h+1) + jugadas.charAt(i*factor_h+2);
+
+
+                System.out.println("Horizontal " + j_h);
+
+                //j_v = "" + jugadas.charAt(i) + jugadas.charAt(i+3) + jugadas.charAt(i+6);
+                //System.out.println("Vertical " + j_v);
+                
+                j_v=""; 
+                j_h = "";
+                factor_h++;
+                
+
+            }
         } 
         
         catch (Exception e) {
